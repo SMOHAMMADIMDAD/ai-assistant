@@ -1,0 +1,152 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #edf3ff;
+  background: #0b1020;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  --app-bg: #0b1020;
+  --sidebar-bg: #0d1425;
+  --surface: #121a2d;
+  --surface-raised: #18233b;
+  --surface-hover: #202d48;
+  --border: rgba(148, 163, 184, 0.14);
+  --text-primary: #edf3ff;
+  --text-secondary: #a5b4cf;
+  --text-muted: #74829e;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-soft: rgba(59, 130, 246, 0.14);
+  --focus-ring: rgba(96, 165, 250, 0.8);
+  --radius-card: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-width: 320px;
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      ellipse at 70% -15%,
+      rgba(37, 99, 235, 0.13),
+      transparent 42%
+    ),
+    var(--app-bg);
+  color: var(--text-primary);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+::selection {
+  color: white;
+  background: rgba(59, 130, 246, 0.48);
+}
+
+a {
+  color: #93c5fd;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: #bfdbfe;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #34415c transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #34415c;
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Reusable premium surfaces */
+.premium-surface {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: linear-gradient(
+    145deg,
+    rgba(27, 39, 64, 0.96),
+    rgba(18, 26, 45, 0.96)
+  );
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.14);
+}
+
+.premium-button {
+  border: 1px solid rgba(96, 165, 250, 0.24);
+  border-radius: 12px;
+  color: white;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  transition:
+    transform 160ms ease,
+    filter 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.premium-button:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.2);
+}
+
+.premium-button:active {
+  transform: translateY(1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #edf3ff;
+    background: #0b1020;
+  }
+}
